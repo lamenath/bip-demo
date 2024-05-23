@@ -1,0 +1,64 @@
+{
+  "id": "subscriptions_carrousel",
+  "type": "SharedSlice",
+  "name": "SubscriptionsCarrousel",
+  "description": "SubscriptionsCarrousel",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading1"
+          }
+        },
+        "subtitle": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Subtitle",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2"
+          }
+        },
+        "tab": {
+          "type": "Group",
+          "config": {
+            "label": "Tab",
+            "repeat": true,
+            "fields": {
+              "tab_label": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Tab label",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "single": "paragraph"
+                }
+              },
+              "countries": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Countries",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "single": "paragraph"
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

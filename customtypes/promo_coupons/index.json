@@ -1,0 +1,57 @@
+{
+  "format": "custom",
+  "id": "promo_coupons",
+  "label": "Promo coupons",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "coupons": {
+        "type": "Group",
+        "config": {
+          "label": "Coupons",
+          "repeat": true,
+          "fields": {
+            "identifier": {
+              "type": "Text",
+              "config": {
+                "label": "identifier",
+                "placeholder": ""
+              }
+            },
+            "coupon_code": {
+              "type": "Text",
+              "config": {
+                "label": "coupon code",
+                "placeholder": ""
+              }
+            },
+            "validity_start": {
+              "type": "Date",
+              "config": {
+                "label": "validity start",
+                "placeholder": ""
+              }
+            },
+            "validity_end": {
+              "type": "Date",
+              "config": {
+                "label": "validity end",
+                "placeholder": ""
+              }
+            },
+            "discount": {
+              "type": "Number",
+              "config": {
+                "label": "discount",
+                "min":0,
+                "max":100,
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

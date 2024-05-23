@@ -1,0 +1,50 @@
+{
+  "format": "custom",
+  "id": "redirections",
+  "label": "Redirections",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "redirections": {
+        "type": "Group",
+        "config": {
+          "label": "Redirections",
+          "repeat": true,
+          "fields": {
+            "type": {
+              "type": "Select",
+              "config": {
+                "label": "type",
+                "placeholder": "",
+                "options": ["301", "302"],
+                "default_value": "301"
+              }
+            },
+            "old_url": {
+              "type": "Text",
+              "config": {
+                "label": "old url",
+                "placeholder": ""
+              }
+            },
+            "new_url": {
+              "type": "Text",
+              "config": {
+                "label": "new url",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "hello": {
+        "type": "Text",
+        "config": {
+          "label": "Hello",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}

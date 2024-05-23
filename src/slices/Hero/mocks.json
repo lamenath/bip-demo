@@ -1,0 +1,87 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Column"
+						}
+					}
+				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Quis culpa labore in velit minim enim esse do quis. Aute tempor nulla consectetur consectetur cupidatat consequat mollit proident magna."
+						}
+					}
+				]
+			},
+			"checks": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Excepteur reprehenderit nulla tempor laboris. Est aliqua aliquip veniam est commodo voluptate ex elit magna ex magna. Elit magna ipsum tempor dolor velit ut eu nulla ad occaecat velit non amet cillum."
+						}
+					}
+				]
+			},
+			"button": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Commodo in magna culpa laboris id incididunt elit cupidatat eiusmod ipsum labore exercitation mollit et magna. Sunt Lorem reprehenderit cillum excepteur mollit ut tempor consectetur excepteur. Commodo esse et ad duis est amet proident non excepteur qui dolore."
+						}
+					}
+				]
+			},
+			"button2": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Cillum cupidatat ipsum esse ad mollit sunt est veniam quis eu. Id proident ullamco ea et consectetur duis dolor officia in officia quis voluptate veniam labore. Proident pariatur ut dolor sint."
+						}
+					}
+				]
+			},
+			"image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1589321578146-4c1ba445cc88",
+					"width": 3168,
+					"height": 4752
+				},
+				"url": "https://images.unsplash.com/photo-1589321578146-4c1ba445cc88",
+				"width": 3168,
+				"height": 4752,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			}
+		},
+		"items": []
+	}
+]

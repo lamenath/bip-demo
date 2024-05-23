@@ -1,0 +1,45 @@
+{
+  "id": "promo_banner",
+  "type": "SharedSlice",
+  "name": "PromoBanner",
+  "description": "PromoBanner",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading1"
+          }
+        },
+        "button": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Button",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,hyperlink"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
