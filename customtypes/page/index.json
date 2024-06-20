@@ -5,7 +5,7 @@
   "repeatable": true,
   "status": true,
   "json": {
-    "Main": {
+    "Contenu": {
       "uid": {
         "type": "UID",
         "config": {
@@ -28,6 +28,15 @@
           "label": "Parent",
           "select": "document",
           "customtypes": ["page"]
+        }
+      },
+      "select": {
+        "type": "Select",
+        "config": {
+          "label": "select",
+          "placeholder": "Pick a category",
+          "options": ["(none)", "New", "Best Seller"],
+          "default_value": "(none)"
         }
       },
       "slices": {
@@ -75,6 +84,48 @@
             "height": 1260
           },
           "thumbnails": []
+        }
+      }
+    },
+    "Thème": {
+      "theme": {
+        "type": "Select",
+        "config": {
+          "label": "Thème",
+          "placeholder": "Choisir le thème pour cette page",
+          "options": ["Professionnels", "Particuliers", "Custom"]
+        }
+      },
+      "styles_personnalises": {
+        "type": "Group",
+        "config": {
+          "label": "Styles personnalisés",
+          "repeat": true,
+          "fields": {
+            "key": {
+              "type": "Text",
+              "config": {
+                "label": "key",
+                "placeholder": ""
+              }
+            },
+            "value": {
+              "type": "Text",
+              "config": {
+                "label": "value",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "custom_css": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Custom CSS",
+          "placeholder": "CSS personnalisé (attention, remplacera les style par défaut)",
+          "allowTargetBlank": false,
+          "single": "embed"
         }
       }
     }

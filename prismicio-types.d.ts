@@ -68,6 +68,31 @@ type PageDocumentDataSlicesSlice =
   | AvantagesSlice;
 
 /**
+ * Item in *Page → Styles personnalisés*
+ */
+export interface PageDocumentDataStylesPersonnalisesItem {
+  /**
+   * key field in *Page → Styles personnalisés*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.styles_personnalises[].key
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  key: prismic.KeyTextField;
+
+  /**
+   * value field in *Page → Styles personnalisés*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.styles_personnalises[].value
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  value: prismic.KeyTextField;
+}
+
+/**
  * Content for Page documents
  */
 interface PageDocumentData {
@@ -77,7 +102,7 @@ interface PageDocumentData {
    * - **Field Type**: Title
    * - **Placeholder**: *None*
    * - **API ID Path**: page.title
-   * - **Tab**: Main
+   * - **Tab**: Contenu
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   title: prismic.TitleField;
@@ -88,10 +113,22 @@ interface PageDocumentData {
    * - **Field Type**: Content Relationship
    * - **Placeholder**: *None*
    * - **API ID Path**: page.parent
-   * - **Tab**: Main
+   * - **Tab**: Contenu
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   parent: prismic.ContentRelationshipField<"page">;
+
+  /**
+   * select field in *Page*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Pick a category
+   * - **Default Value**: (none)
+   * - **API ID Path**: page.select
+   * - **Tab**: Contenu
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  select: prismic.SelectField<"(none)" | "New" | "Best Seller", "filled">;
 
   /**
    * Slice Zone field in *Page*
@@ -99,7 +136,7 @@ interface PageDocumentData {
    * - **Field Type**: Slice Zone
    * - **Placeholder**: *None*
    * - **API ID Path**: page.slices[]
-   * - **Tab**: Main
+   * - **Tab**: Contenu
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
   slices: prismic.SliceZone<PageDocumentDataSlicesSlice> /**
@@ -133,7 +170,40 @@ interface PageDocumentData {
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  meta_image: prismic.ImageField<never>;
+  meta_image: prismic.ImageField<never> /**
+   * Thème field in *Page*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Choisir le thème pour cette page
+   * - **API ID Path**: page.theme
+   * - **Tab**: Thème
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */;
+  theme: prismic.SelectField<"Professionnels" | "Particuliers" | "Custom">;
+
+  /**
+   * Styles personnalisés field in *Page*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.styles_personnalises[]
+   * - **Tab**: Thème
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  styles_personnalises: prismic.GroupField<
+    Simplify<PageDocumentDataStylesPersonnalisesItem>
+  >;
+
+  /**
+   * Custom CSS field in *Page*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: CSS personnalisé (attention, remplacera les style par défaut)
+   * - **API ID Path**: page.custom_css
+   * - **Tab**: Thème
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  custom_css: prismic.RichTextField;
 }
 
 /**
@@ -550,6 +620,61 @@ export type AvantagesSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *CustomBlock → Default → Primary*
+ */
+export interface CustomBlockSliceDefaultPrimary {
+  /**
+   * html field in *CustomBlock → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Saisir votre HTML ici
+   * - **API ID Path**: custom_block.default.primary.html
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  html: prismic.RichTextField;
+
+  /**
+   * css field in *CustomBlock → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Saisir le CSS qui doit s'appliquer uniquement à votre HTML ici
+   * - **API ID Path**: custom_block.default.primary.css
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  css: prismic.RichTextField;
+}
+
+/**
+ * Default variation for CustomBlock Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CustomBlockSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CustomBlockSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *CustomBlock*
+ */
+type CustomBlockSliceVariation = CustomBlockSliceDefault;
+
+/**
+ * CustomBlock Shared Slice
+ *
+ * - **API ID**: `custom_block`
+ * - **Description**: CustomBlock
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CustomBlockSlice = prismic.SharedSlice<
+  "custom_block",
+  CustomBlockSliceVariation
+>;
+
+/**
  * Primary content in *Hero → Default → Primary*
  */
 export interface HeroSliceDefaultPrimary {
@@ -814,6 +939,7 @@ declare module "@prismicio/client" {
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
+      PageDocumentDataStylesPersonnalisesItem,
       ProductDocument,
       ProductDocumentData,
       ProductDocumentDataSlicesSlice,
@@ -831,6 +957,10 @@ declare module "@prismicio/client" {
       AvantagesSliceDefaultPrimary,
       AvantagesSliceVariation,
       AvantagesSliceDefault,
+      CustomBlockSlice,
+      CustomBlockSliceDefaultPrimary,
+      CustomBlockSliceVariation,
+      CustomBlockSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,

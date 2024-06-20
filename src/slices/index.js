@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 
 export const components = {
   avantages: dynamic(() => import("./Avantages")),
+  custom_block: dynamic(() => import("./CustomBlock")),
   hero: dynamic(() => import("./Hero")),
   promo_banner: dynamic(() => import("./PromoBanner")),
   subscriptions_carrousel: dynamic(() => import("./SubscriptionsCarrousel")),

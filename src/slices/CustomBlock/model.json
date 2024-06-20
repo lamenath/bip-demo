@@ -1,0 +1,37 @@
+{
+  "id": "custom_block",
+  "type": "SharedSlice",
+  "name": "CustomBlock",
+  "description": "CustomBlock",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "html": {
+          "type": "StructuredText",
+          "config": {
+            "label": "html",
+            "placeholder": "Saisir votre HTML ici",
+            "allowTargetBlank": false,
+            "single": "embed"
+          }
+        },
+        "css": {
+          "type": "StructuredText",
+          "config": {
+            "label": "css",
+            "placeholder": "Saisir le CSS qui doit s'appliquer uniquement à votre HTML ici",
+            "allowTargetBlank": false,
+            "single": "embed"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

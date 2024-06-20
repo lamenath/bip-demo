@@ -1,0 +1,31 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"html": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Proident duis voluptate cupidatat est nisi sit minim consequat."
+						}
+					}
+				]
+			},
+			"css": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Id proident est ea sit duis ipsum culpa esse qui reprehenderit eiusmod ea duis aliqua eiusmod."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
