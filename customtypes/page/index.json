@@ -44,6 +44,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "custom_block": {
+              "type": "SharedSlice"
+            },
             "promo_banner": {
               "type": "SharedSlice"
             },
@@ -102,18 +105,13 @@
           "label": "Styles personnalisés",
           "repeat": true,
           "fields": {
-            "key": {
-              "type": "Text",
+            "rule": {
+              "type": "StructuredText",
               "config": {
-                "label": "key",
-                "placeholder": ""
-              }
-            },
-            "value": {
-              "type": "Text",
-              "config": {
-                "label": "value",
-                "placeholder": ""
+                "label": "rule",
+                "placeholder": "Coller votre CSS Custom Rule ici",
+                "allowTargetBlank": false,
+                "single": "embed"
               }
             }
           }

@@ -62,6 +62,7 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | CustomBlockSlice
   | PromoBannerSlice
   | HeroSlice
   | SubscriptionsCarrouselSlice
@@ -72,24 +73,14 @@ type PageDocumentDataSlicesSlice =
  */
 export interface PageDocumentDataStylesPersonnalisesItem {
   /**
-   * key field in *Page → Styles personnalisés*
+   * rule field in *Page → Styles personnalisés*
    *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: page.styles_personnalises[].key
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Coller votre CSS Custom Rule ici
+   * - **API ID Path**: page.styles_personnalises[].rule
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  key: prismic.KeyTextField;
-
-  /**
-   * value field in *Page → Styles personnalisés*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: page.styles_personnalises[].value
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  value: prismic.KeyTextField;
+  rule: prismic.RichTextField;
 }
 
 /**
