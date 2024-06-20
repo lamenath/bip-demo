@@ -18,7 +18,7 @@
             "label": "html",
             "placeholder": "Saisir votre HTML ici",
             "allowTargetBlank": false,
-            "single": "embed"
+            "single": "preformatted"
           }
         },
         "css": {
@@ -27,7 +27,7 @@
             "label": "css",
             "placeholder": "Saisir le CSS qui doit s'appliquer uniquement à votre HTML ici",
             "allowTargetBlank": false,
-            "single": "embed"
+            "single": "preformatted"
           }
         }
       },
